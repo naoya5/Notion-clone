@@ -6,14 +6,15 @@ export const noteRepository = {
       .from("notes")
       .insert([
         {
+          //notesテーブルにレコードを追加
           user_id: userId,
           title: params.title,
           parent_id: params.parentId,
         },
       ])
-      .select()
-      .single();
+      .select() //配列で取得
+      .single(); //単一のレコードを取得
     if (error != null) throw new Error(error.message);
-    return data;
+    return data; //notesテーブルのレコードを返す
   },
 };
