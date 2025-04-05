@@ -18,7 +18,7 @@ export const noteRepository = {
     return data; //notesテーブルのレコードを返す
   },
   //ノートを取得
-  async find(userId: string, parentDocumentId: number) {
+  async find(userId: string, parentDocumentId?: number) {
     const query = supabase
       .from("notes")
       .select()
