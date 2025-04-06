@@ -64,6 +64,7 @@ export function NoteList({ layer = 0, parentId }: NoteListProps) {
         ページがありません
       </p>
       {notes
+        /* 親がいないノートだけを取得して表示*/
         .filter((note) => note.parent_document == parentId)
         .map((note) => {
           return (
